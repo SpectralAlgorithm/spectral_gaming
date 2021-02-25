@@ -26,6 +26,17 @@
 			z-index: -1000; 
 			overflow: hidden;
 			}
+			.parallax {
+			/* The image used */
+			background-image: url("https://github.com/SpectralAlgorithm/spectral_gaming/raw/main/files/img_parallax.png");
+			/* Set a specific height */
+			height: 500px;
+			/* Create the parallax scrolling effect */
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			}
 			.BtnDiscord {
 			background-color: #4CAF50;
 			border: none;
@@ -65,6 +76,7 @@
 		</style>
 	</head>
 	<body>
+		<div class="parallax"></div>
 		<video autoplay muted loop id="myVideo">
 			<source src="https://github.com/SpectralAlgorithm/spectralgaming/raw/main/files/sample.mp4" type="video/mp4">
 			Your browser does not support HTML5 video. 
