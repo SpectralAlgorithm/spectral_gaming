@@ -1,75 +1,108 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>YouPorn</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-         * {
-         box-sizing: border-box;
-         }
-         body {
-         margin: 0;
-         font-family: Arial;
-         font-size: 17px;
-         }
-         #myVideo {
-         position: fixed;
-         right: 0;
-         bottom: 0;
-         min-width: 100%; 
-         min-height: 100%;
-         }
-         .content {
-         position: fixed;
-         bottom: 0;
-         background: rgba(0, 0, 0, 0.5);
-         color: #f1f1f1;
-         width: 100%;
-         padding: 20px;
-         }
-         #myBtn {
-         width: 200px;
-         font-size: 18px;
-         padding: 10px;
-         border: none;
-         background: #000;
-         color: #fff;
-         cursor: pointer;
-         }
-         #myBtn:hover {
-         background: #ddd;
-         color: black;
-         }
-      </style>
-   </head>
-   <body>
-      <body bgcolor="black">
-      <video autoplay muted loop id="myVideo">
-         <source src="https://github.com/SpectralAlgorithm/spectralgaming/raw/main/files/background.mp4" type="video/mp4">
-         Your browser does not support HTML5 video.
-      </video>
-      <div class="content">
-         <h1>Hello there!</h1>
-         <p>Stay Awhile and Listen...</p>
-         <b><font color="red" style="Times New Roman" size="6">Register Like A Boss</font></b><br>
-         <a href="C:\Users\Student\Desktop\PaoloCalendar.html"><input type="reset" value="Tactical Nuke. Don't Click!"></a>
-         <a href="#" class="myBtn">Link Button</a>     
-         <button id="myBtn" onclick="myFunction()">Discord</button>
-      </div>
-      <script>
-         var video = document.getElementById("myVideo");
-         var btn = document.getElementById("myBtn");
-         
-         function myFunction() {
-           location.href = "http://example.com";
-           if (video.paused) {
-             video.play();
-             btn.innerHTML = "Pause";
-           } else {
-             video.pause();
-             btn.innerHTML = "Play";
-           }
-         }
-      </script>
-   </body>
+	<head>
+		<title>YouPorn</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			* {
+			box-sizing: border-box;
+			}
+			body {
+				background-color: #000000
+				margin: 0;
+				font-family: Arial;
+				font-size: 17px;
+			}
+			#myVideo {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				min-width: 100%; 
+				min-height: 100%;
+			}
+			.BtnDiscord {
+				background-color: #4CAF50;
+				border: none;
+				color: white;
+				padding: 12px 24px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 14px;
+				margin: 4px 2px;
+				cursor: hand;
+			}
+			.content {
+				position: fixed;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.5);
+				color: #f1f1f1;
+				width: 100%;
+				padding: 20px;
+			}
+			#myBtn {
+				background-color: #FF0000;
+				border: none;
+				color: white;
+				padding: 12px 24px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 14px;
+				margin: 4px 2px;
+				cursor: hand;
+			}
+			#myBtn:hover {
+				background: #ddd;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<video autoplay muted loop id="myVideo">
+			<source src="https://github.com/SpectralAlgorithm/spectralgaming/raw/main/files/background-new.mp4" type="video/mp4">
+			Your browser does not support HTML5 video.
+		</video>
+		<div class="content">
+			<audio autoplay loop id="myAudio">
+				<source src="https://github.com/SpectralAlgorithm/spectralgaming/raw/main/files/sample.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			</audio>
+			<center>
+				<div style="color: #777;background-color:rgba(0, 0, 0, 0.5);text-align:center;padding:20px 80px;text-align: center;">
+					<font color=00FFFF style="Times New Roman" size="3">
+						<h3 style="text-align:center;">Welcome to Hell { v0.0.0.1 }</h3>
+					</font>
+					<font color=FFFFFF style="Times New Roman" size="3">
+						<p>Ayy, shitpost content here just because I can.</p>
+					</font>
+				</div>
+				<br>
+				<a href="https://discord.gg/TqDfYP3" class="BtnDiscord">Discord!</a>
+				<button id="myBtn" onclick="myFunction()">:(</button>
+				<a href="https://www.pornhub.com/view_video.php?viewkey=ph6014c62a89814" class="BtnDiscord">Minecraft</a>
+				<br>
+				<font color=FFFFFF size="2">
+					<p>© Algorithm 2021</p>
+				</font>
+			</center>
+		</div>
+		<script>
+			var video = document.getElementById("myVideo");
+			var audio = document.getElementById("myAudio"); 
+			var btn = document.getElementById("myBtn");
+			
+			function myFunction() {
+				if (video.paused) {
+					video.play();
+					audio.play();
+					btn.innerHTML = ":(";
+				} else {
+					video.pause();
+					audio.pause();
+					btn.innerHTML = ":)";
+				}
+			}
+		</script>
+	</body>
 </html>
