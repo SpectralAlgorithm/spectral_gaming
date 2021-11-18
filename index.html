@@ -105,17 +105,27 @@
 					</font>
 				</div>
 				<br> <a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld" class="BtnDiscord">Guilded!</a>
-				<button id="myBtn" onclick="myFunction()">:|</button> <a href="https://www.google.com" class="BtnDiscord">Minecraft</a>
-				<br> 
+				<button id="myBtn" onclick="myFunction()">:|</button> <a href="https://www.google.com" class="BtnDiscord">Discord!</a>
+				<br>
+				<div id="myDIV">				
+					<br>
+					<center><iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2F4l38X4aE" width="468" height="311" frameborder="0" scrolling="no"></iframe></center>
+					<br>
+				</div>
 				<font color=FFFFFF style="Segoe UI" size="1">
-					<p>© Algorithm 2021. all rights reserved.</p>
+					<p>© Algorithm 2021. All Rights Reserved.</p>
 				</font>
 			</center>
 		</div>
 		<script>
+			alert("What the fuck bruh, you're not supposed to be here...");
+
 			var video = document.getElementById("myVideo");
 			var audio = document.getElementById("myAudio");
 			var btn = document.getElementById("myBtn");
+
+			var x = document.getElementById("myDIV");
+			x.style.display = "none";
 			
 			function myFunction() {
 				if(video.paused) {
@@ -127,8 +137,16 @@
 					audio.pause();
 					btn.innerHTML = ":(";
 				}
+
+				var x = document.getElementById("myDIV");
+				if (x.style.display === "none") {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
 			}
 		</script>
 		<script src="http://mediaplayer.yahoo.com/js"></script>
 	</body>
+	<body oncontextmenu="return false;">
 </html>
