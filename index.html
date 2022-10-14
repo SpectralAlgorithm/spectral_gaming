@@ -72,7 +72,7 @@
 				padding: 20px;
 				filter: blur(8px);
 				-webkit-filter: blur(8px);
-				border-radius: 9px;
+				border-radius: 90px;
 			}
 			.content2 {
 				position: fixed;
@@ -113,8 +113,8 @@
 			Your browser does not support the audio element. 
 		</audio>
 		<div class="vignette"></div>
-		<div class="content1">
-		</div>
+		<center><div id="parallax"><div id="particles-js"></div></div></center>
+		<div class="content1"></div>
 		<div class="content2">
 			<center>
 				<div style="border-radius: 9px;backdrop-filter: blur(9px);color: #777;background-color:rgba(0, 0, 0, 0.5);text-align:center;padding:20px 80px;text-align: center;">
@@ -126,11 +126,11 @@
 					</font>
 				</div>
 				<br>
-					<a href="https://twitch.tv/spectralgamingofficial" class="BtnLayout">TwiTch!</a>
-					<a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld" class="BtnLayout">Guilded!</a>
+					<a href="https://twitch.tv/SpectralGamingOfficial/" class="BtnLayout">TwiTch!</a>
+					<a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld/" class="BtnLayout">Guilded!</a>
 					<button id="myBtn" onclick="myFunction()">:|</button>
-					<a href="https://facebook.com/SpectralGamingOfficial" class="BtnLayout">Facebook!</a>
-					<a href="https://youtube.com/c/SpectralGamingOfficial" class="BtnLayout">YouTube!</a>
+					<a href="https://facebook.com/SpectralGamingOfficial/" class="BtnLayout">Facebook!</a>
+					<a href="https://youtube.com/c/SpectralGamingOfficial/" class="BtnLayout">YouTube!</a>
 				<br>
 				<div id="myDIV">				
 					<br>
@@ -175,7 +175,50 @@
 	</body>
 	<body oncontextmenu="return false;">
 
-<div id="particles-js"></div>
+<!-- =========================================================== -->
+<!-- Parallax -->
+<!-- =========================================================== -->
+
+<style>
+	body {
+		margin: 0;
+		background-color: #1d1e22;
+	}
+	#parallax {
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		background-image: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-1.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-2.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-3.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-position: 50% 1000%;
+	}
+</style>
+<script>
+	(function() {
+		// Add event listener
+		document.addEventListener("mousemove", parallax);
+		const elem = document.querySelector("#parallax");
+		// Magic happens here
+		function parallax(e) {
+			let _w = window.innerWidth / 2;
+			let _h = window.innerHeight / 2;
+			let _mouseX = e.clientX;
+			let _mouseY = e.clientY;
+			let _depth1 = `${50 - (_mouseX - _w) * 0.001}% ${10 - (_mouseY - _h) * 0.0}%`;
+			let _depth2 = `${50 - (_mouseX - _w) * 0.004}% ${15 - (_mouseY - _h) * 0.001}%`;
+			let _depth3 = `${50 - (_mouseX - _w) * 0.01}% ${60 - (_mouseY - _h) * 0.002}%`;
+			let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+			console.log(x);
+			elem.style.backgroundPosition = x;
+		}
+	})();
+</script>
+
+<!-- =========================================================== -->
+<!-- Particles -->
+<!-- =========================================================== -->
+
 <script src="https://spectralalgorithm.github.io/spectral_gaming/files/particles.min.js"></script>
 <style>
 	body {
@@ -196,7 +239,7 @@
 <script>
 	particlesJS("particles-js", {
 		particles: {
-			number: { value: 10, density: { enable: true, value_area: 420 } },
+			number: { value: 10, density: { enable: true, value_area: 120 } },
 			color: { value: "#ffffff" },
 			shape: {
 				type: "circle",
@@ -225,7 +268,7 @@
 				enable: true,
 				speed: 2,
 				direction: "none",
-				random: false,
+				random: true,
 				straight: false,
 				out_mode: "out",
 				bounce: false,
@@ -233,14 +276,14 @@
 			}
 		},
 		interactivity: {
-			detect_on: "canvas",
+			detect_on: "page",
 			events: {
-				onhover: { enable: true, mode: "repulse" },
+				onhover: { enable: true, mode: "grab" },
 				onclick: { enable: true, mode: "push" },
 				resize: true
 			},
 			modes: {
-				grab: { distance: 400, line_linked: { opacity: 1 } },
+				grab: { distance: 200, line_linked: { opacity: 1 } },
 				bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
 				repulse: { distance: 200, duration: 0.4 },
 				push: { particles_nb: 4 },
@@ -267,4 +310,5 @@
 	};
 	requestAnimationFrame(update);
 </script>
+
 </html>
