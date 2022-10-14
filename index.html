@@ -6,88 +6,100 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
 			* {
-			box-sizing: border-box;
+				box-sizing: border-box;
 			}
 			body {
-			width: 100%; 
-			height:100%; 
-			margin: 0;
-			font-family: Arial;
-			font-size: 17px;
-			background-color: black;
-			background-image: url("https://spectralalgorithm.github.io/spectral_gaming/files/sample.png");
-			background-attachment: fixed;
-			background-position: center;
-			background-repeat: no-repeat;	
-			background-size: cover;
-			overflow:hidden;
+				width: 100%; 
+				height:100%; 
+				margin: 0;
+				font-family: Arial;
+				font-size: 17px;
+				background-color: black;
+				background-image: url("https://spectralalgorithm.github.io/spectral_gaming/files/sample.png");
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;	
+				background-size: cover;
+				overflow:hidden;
+			}
+			@font-face {
+				font-family: Exocet;
+				src: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample.ttf);
+			}
+			div {
+				font-family: Exocet;
 			}
 			#myVideo {
-			position: fixed;
-			top: 50%; 
-			left: 50%;
-			-webkit-transform: translateX(-50%) translateY(-50%);
-			transform: translateX(-50%) translateY(-50%);
-			min-width: 100%; 
-			min-height: 100%; 
-			width: auto; 
-			height: auto;
-			z-index: -1000; 
-			overflow: hidden;
+				position: fixed;
+				top: 50%; 
+				left: 50%;
+				-webkit-transform: translateX(-50%) translateY(-50%);
+				transform: translateX(-50%) translateY(-50%);
+				min-width: 100%; 
+				min-height: 100%; 
+				width: auto; 
+				height: auto;
+				z-index: -1000; 
+				overflow: hidden;
 			}
 			.vignette {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
 			}
-			.BtnDiscord {
-			background-color: #4CAF50;
-			border: none;
-			color: white;
-			padding: 12px 24px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 14px;
-			margin: 4px 2px;
-			cursor: hand;
+			.BtnLayout {
+				background-color: #4CAF50;
+				border: none;
+				color: white;
+				padding: 12px 24px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 14px;
+				margin: 4px 2px;
+				cursor: hand;
+				border-radius: 9px;
 			}
 			.content1 {
-			position: fixed;
-			bottom: 1;
-			background: rgba(0, 0, 0, 0.5);
-			color: #f1f1f1;
-			width: 100%;
-			padding: 20px;
-			filter: blur(8px);
-			-webkit-filter: blur(8px);
+				position: fixed;
+				bottom: 1;
+				background: rgba(0, 0, 0, 0.5);
+				color: #f1f1f1;
+				width: 100%;
+				padding: 20px;
+				filter: blur(8px);
+				-webkit-filter: blur(8px);
+				border-radius: 9px;
 			}
 			.content2 {
-			position: fixed;
-			bottom: 0;
-			background: rgba(0, 0, 0, 0.5);
-			color: #f1f1f1;
-			width: 100%;
-			padding: 20px;
+				position: fixed;
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.5);
+				color: #f1f1f1;
+				width: 100%;
+				padding: 20px;
+				border-radius: 9px;
+				backdrop-filter: blur(3px);
 			}
 			#myBtn {
-			background-color: #FF0000;
-			border: none;
-			color: white;
-			padding: 12px 24px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 14px;
-			margin: 4px 2px;
-			cursor: hand;
+				background-color: #FF0000;
+				border: none;
+				color: white;
+				padding: 12px 24px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 14px;
+				margin: 4px 2px;
+				cursor: hand;
+				border-radius: 9px;
 			}
 			#myBtn:hover {
-			background: #ddd;
-			color: black;
+				background: #ddd;
+				color: black;
 			}
 		</style>
 	</head>
@@ -105,37 +117,42 @@
 		</div>
 		<div class="content2">
 			<center>
-				<div style="color: #777;background-color:rgba(0, 0, 0, 0.5);text-align:center;padding:20px 80px;text-align: center;">
+				<div style="border-radius: 9px;backdrop-filter: blur(9px);color: #777;background-color:rgba(0, 0, 0, 0.5);text-align:center;padding:20px 80px;text-align: center;">
 					<font color=00FFFF style="Segoe UI" size="3">
-						<h2 style="text-align:center;">⧫ Welcome to Hell ⧫</h2>
+						<h2 style="text-align:center;">⧫ Welcome To Hell ⧫</h2>
 					</font>
 					<font color=FFFFFF style="Segoe UI" size="2">
-						<p>I mainly shitpost stuff here because I can, but can u imagine having actual content posted here, cringe.</p>
+						<p>I mosTly jusT shiTposT sTuff because I can, I mean jusT imagine having acTual conTenT posTed here, preTTy cringe Tbh.</p>
 					</font>
 				</div>
-				<br> <a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld" class="BtnGuilded">Guilded!</a>
-				<button id="myBtn" onclick="myFunction()">:|</button> <a href="https://discord.gg/qZc9WjFKE4" class="BtnDiscord">Discord!</a>
+				<br>
+					<a href="https://twitch.tv/spectralgamingofficial" class="BtnLayout">TwiTch!</a>
+					<a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld" class="BtnLayout">Guilded!</a>
+					<button id="myBtn" onclick="myFunction()">:|</button>
+					<a href="https://facebook.com/SpectralGamingOfficial" class="BtnLayout">Facebook!</a>
+					<a href="https://youtube.com/c/SpectralGamingOfficial" class="BtnLayout">YouTube!</a>
 				<br>
 				<div id="myDIV">				
 					<br>
-					<center><iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2F4l38X4aE&size=large" width="100%" height="291" frameborder="0" scrolling="no"></iframe></center>
+						<center>
+							<div>
+								<iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2F4l38X4aE&size=large" width="100%" height="291" frameborder="0" scrolling="no"></iframe>
+							</div>
+						</center>
 					<br>
 				</div>
 				<font color=FFFFFF style="Segoe UI" size="1">
-					<p>© Algorithm 2021-2022. All Rights Reserved.</p>
+					<p>© AlgoriThm 2021-2022. All RighTs Reserved.</p>
 				</font>
 			</center>
 		</div>
 		<script>
-			alert("wtf, how'd you get here? you're not supposed to be here...");
-
+			alert("wtf, why u here? you're not supposed to be here...");
 			var video = document.getElementById("myVideo");
 			var audio = document.getElementById("myAudio");
 			var btn = document.getElementById("myBtn");
-
 			var x = document.getElementById("myDIV");
 			x.style.display = "none";
-			
 			function myFunction() {
 				if(video.paused) {
 					video.play();
@@ -146,7 +163,6 @@
 					audio.pause();
 					btn.innerHTML = ":)";
 				}
-
 				var x = document.getElementById("myDIV");
 				if (x.style.display === "none") {
 					x.style.display = "block";
