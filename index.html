@@ -8,9 +8,10 @@
 			* {
 				box-sizing: border-box;
 			}
+
 			body {
-				width: 100%; 
-				height:100%; 
+				width: 100%;
+				height: 100%;
 				margin: 0;
 				font-family: Arial;
 				font-size: 17px;
@@ -18,38 +19,43 @@
 				background-image: url("https://spectralalgorithm.github.io/spectral_gaming/files/sample.png");
 				background-attachment: fixed;
 				background-position: center;
-				background-repeat: no-repeat;	
+				background-repeat: no-repeat;
 				background-size: cover;
-				overflow:hidden;
+				overflow: hidden;
 			}
+
 			@font-face {
 				font-family: Exocet;
 				src: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample.ttf);
 			}
+
 			div {
 				font-family: Exocet;
 			}
+
 			#myVideo {
 				position: fixed;
-				top: 50%; 
+				top: 50%;
 				left: 50%;
 				-webkit-transform: translateX(-50%) translateY(-50%);
 				transform: translateX(-50%) translateY(-50%);
-				min-width: 100%; 
-				min-height: 100%; 
-				width: auto; 
+				min-width: 100%;
+				min-height: 100%;
+				width: auto;
 				height: auto;
-				z-index: -1000; 
+				z-index: -1000;
 				overflow: hidden;
 			}
+
 			.vignette {
 				position: fixed;
 				top: 0;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+				box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
 			}
+
 			.BtnLayout {
 				background-color: #4CAF50;
 				border: none;
@@ -63,6 +69,7 @@
 				cursor: hand;
 				border-radius: 9px;
 			}
+
 			.content1 {
 				position: fixed;
 				bottom: 1;
@@ -74,6 +81,7 @@
 				-webkit-filter: blur(8px);
 				border-radius: 90px;
 			}
+
 			.content2 {
 				position: fixed;
 				bottom: 0;
@@ -84,6 +92,7 @@
 				border-radius: 9px;
 				backdrop-filter: blur(3px);
 			}
+
 			#myBtn {
 				background-color: #FF0000;
 				border: none;
@@ -97,6 +106,7 @@
 				cursor: hand;
 				border-radius: 9px;
 			}
+
 			#myBtn:hover {
 				background: #ddd;
 				color: black;
@@ -105,40 +115,102 @@
 	</head>
 	<body>
 		<video autoplay muted loop id="myVideo">
-			<source src="https://spectralalgorithm.github.io/spectral_gaming/files/sample.mp4" type="video/mp4">
-			Your browser does not support HTML5 video. 
+			<source src="https://spectralalgorithm.github.io/spectral_gaming/files/sample.mp4" type="video/mp4"> Your browser does not support HTML5 video.
 		</video>
 		<audio autoplay loop id="myAudio">
-			<source src="https://spectralalgorithm.github.io/spectral_gaming/files/sample.mp3" type="audio/mpeg">
-			Your browser does not support the audio element. 
+			<source src="https://spectralalgorithm.github.io/spectral_gaming/files/sample.mp3" type="audio/mpeg"> Your browser does not support the audio element.
 		</audio>
 		<div class="vignette"></div>
-		<center><div id="parallax"><div id="particles-js"></div></div></center>
+		<center>
+			<div id="parallax">
+				<div id="particles-js"></div>
+			</div>
+		</center>
 		<div class="content1"></div>
 		<div class="content2">
 			<center>
-				<div style="border-radius: 9px;backdrop-filter: blur(9px);color: #777;background-color:rgba(0, 0, 0, 0.5);text-align:center;padding:20px 80px;text-align: center;">
-					<font color=00FFFF style="Segoe UI" size="3">
+				<div style="border-radius: 9px;backdrop-filter: blur(9px);color: #777;background-color:rgba(0, 0, 0, 0.5);text-align:center;padding:10px 80px;text-align: center;">
+					<font color=00FFFF style="Segoe UI" size="4">
 						<h2 style="text-align:center;">⧫ Welcome To Hell ⧫</h2>
 					</font>
-					<font color=FFFFFF style="Segoe UI" size="2">
-						<p>I mosTly jusT shiTposT sTuff because I can, I mean jusT imagine having acTual conTenT posTed here, preTTy cringe Tbh.</p>
+					<script>
+						var r_text = new Array();
+						r_text[0] = "A man will believe anyThing ThaT does noT cosT him anyThing";
+						r_text[1] = "Academic rivalries are so inTense because The sTakes are so small";
+						r_text[2] = "AlmosT everyThing in life is easier To geT inTo Than ouT of";
+						r_text[3] = "Any sufficienTly advanced Technology is indisTinguishable from magic";
+						r_text[4] = "Common sense is insTincT; Enough of iT is genius";
+						r_text[5] = "Confidence is The feeling you had before you knew beTTer";
+						r_text[6] = "Even a man who has noThing can sTill offer his life";
+						r_text[7] = "Even The mosT faiThful believer can serve a false god";
+						r_text[8] = "Everyone has a scheme for geTTing rich ThaT will noT work";
+						r_text[9] = "ExTincTion is The ulTimaTe faTe of all species";
+						r_text[10] = "ExTreme boredom serves To cure boredom";
+						r_text[11] = "ExTreme sorrow laughs; exTreme joy weeps";
+						r_text[12] = "Fear denies faiTh.";
+						r_text[13] = "Fear is a far more dominanT force in human behavior Than euphoria.";
+						r_text[14] = "Fools mulTiply when wise men are silenT";
+						r_text[15] = "Freedom is for everyone; Or no one";
+						r_text[16] = "Friends may come and friends may go, buT enemies accumulaTe";
+						r_text[17] = "FrusTraTion is noT having anyone else To blame, buT one's self";
+						r_text[18] = "God gives The nuTs, buT he does noT crack Them";
+						r_text[19] = "Happiness is a delusion of The weak";
+						r_text[20] = "He who keeps silenT consenTs";
+						r_text[21] = "Heresy grows from idleness";
+						r_text[22] = "If you cannoT convince Them, confuse Them";
+						r_text[23] = "If you disinfecT The pond, you kill The lilies";
+						r_text[24] = "If your reasoning powers are good, Then you are a fairly good planner";
+						r_text[25] = "IgnoranTia juris non excusaT - Ignorance of The law excuses no one";
+						r_text[26] = "In a mad world, only greaTer madness succeeds";
+						r_text[27] = "Innocence proves noThing - There is no such Thing as innocence, only varying degrees of guilT";
+						r_text[28] = "IT is ofTen easier To find The TruTh Than iT is To accepT iT";
+						r_text[29] = "Knowledge can cure ignorance, buT inTelligence cannoT cure sTupidiTy";
+						r_text[30] = "Life is a learning experience; The diploma is your deaTh cerTificaTe";
+						r_text[31] = "May you live in inTeresTing Times";
+						r_text[32] = "NaTure always sides wiTh The hidden flaw";
+						r_text[33] = "Never argue wiTh a fool... people may noT be able To Tell you aparT";
+						r_text[34] = "Never claim as a righT ThaT which you can ask as a favor";
+						r_text[35] = "Never complain; never explain";
+						r_text[36] = "Never underesTimaTe The power of sTupidiTy";
+						r_text[37] = "No man's knowledge goes beyond his experience";
+						r_text[38] = "PessimisTs are The world's happiesT people...";
+						r_text[39] = "Rumors are The sauce of a dry life";
+						r_text[40] = "Small Things enTerTain small minds";
+						r_text[41] = "STrong words connoTe weak argumenTs";
+						r_text[42] = "TempT noT a desperaTe man";
+						r_text[43] = "The besT way To achieve immorTaliTy is by noT dying";
+						r_text[44] = "The besT way To aTTracT money is To give The appearance of having iT";
+						r_text[45] = "The biggesT idioT can ask quesTions The smarTesT man cannoT answer";
+						r_text[46] = "The deepesT and mosT imporTanT virTues are ofTen The dullesT ones";
+						r_text[47] = "The firsT greaT gifT ThaT we can besTow upon oThers is a good example";
+						r_text[48] = "The saddesT of words: I always wanTed To, buT never did";
+						r_text[49] = "The secreT To creaTiviTy is knowing how To hide your sources";
+						r_text[50] = "Those who do noT learn from hisTory ofTen end up making iT";
+						r_text[51] = "We musT Take sides... Silence encourages The TormenTor, never The TormenTed";
+						r_text[52] = "Wer zuleTzT lachT, lachT am besTen";
+						r_text[53] = "You can discover whaT your enemy fears mosT by observing The means he uses To frighTen you";
+						r_text[54] = "Your life would be very empTy if you had noThing To regreT";
+						var i_text = Math.floor(r_text.length * Math.random());
+						document.write("<center><font color=F4BB44 size = 3>'" + r_text[i_text] + "'</font></center>");
+					</script>
+					<font color=151515 style="Segoe UI" size="1">
+						<p>I mosTly jusT shiTposT sTuff here because I can, I mean jusT imagine having acTual conTenT being posTed here, cringe</p>
 					</font>
 				</div>
 				<br>
-					<a href="https://twitch.tv/SpectralGamingOfficial/" class="BtnLayout">TwiTch!</a>
-					<a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld/" class="BtnLayout">Guilded!</a>
-					<button id="myBtn" onclick="myFunction()">:|</button>
-					<a href="https://facebook.com/SpectralGamingOfficial/" class="BtnLayout">Facebook!</a>
-					<a href="https://youtube.com/c/SpectralGamingOfficial/" class="BtnLayout">YouTube!</a>
+				<a href="https://twitch.tv/SpectralGamingOfficial/" class="BtnLayout">TwiTch!</a>
+				<a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld/" class="BtnLayout">Guilded!</a>
+				<button id="myBtn" onclick="myFunction()">:|</button>
+				<a href="https://facebook.com/SpectralGamingOfficial/" class="BtnLayout">Facebook!</a>
+				<a href="https://youtube.com/c/SpectralGamingOfficial/" class="BtnLayout">YouTube!</a>
 				<br>
-				<div id="myDIV">				
+				<div id="myDIV">
 					<br>
-						<center>
-							<div>
-								<iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2F4l38X4aE&size=large" width="100%" height="291" frameborder="0" scrolling="no"></iframe>
-							</div>
-						</center>
+					<center>
+						<div>
+							<iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2F4l38X4aE&size=large" width="100%" height="291" frameborder="0" scrolling="no"></iframe>
+						</div>
+					</center>
 					<br>
 				</div>
 				<font color=FFFFFF style="Segoe UI" size="1">
@@ -147,14 +219,15 @@
 			</center>
 		</div>
 		<script>
-			alert("wtf, why u here? you're not supposed to be here...");
 			var video = document.getElementById("myVideo");
 			var audio = document.getElementById("myAudio");
 			var btn = document.getElementById("myBtn");
 			var x = document.getElementById("myDIV");
 			x.style.display = "none";
+
 			function myFunction() {
-				if(video.paused) {
+				alert("haha button lmao");
+				if (video.paused) {
 					video.play();
 					audio.play();
 					btn.innerHTML = ":(";
@@ -173,141 +246,194 @@
 		</script>
 		<script src="http://mediaplayer.yahoo.com/js"></script>
 	</body>
-	<body oncontextmenu="return false;">
-
-<!-- =========================================================== -->
-<!-- Parallax -->
-<!-- =========================================================== -->
-
-<style>
-	body {
-		margin: 0;
-		background-color: #1d1e22;
-	}
-	#parallax {
-		position: relative;
-		width: 100%;
-		height: 100vh;
-		background-image: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-3.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-2.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-1.png);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-position: 50% 1000%;
-	}
-</style>
-<script>
-	(function() {
-		// Add event listener
-		document.addEventListener("mousemove", parallax);
-		const elem = document.querySelector("#parallax");
-		// Magic happens here
-		function parallax(e) {
-			let _w = window.innerWidth / 2;
-			let _h = window.innerHeight / 2;
-			let _mouseX = e.clientX;
-			let _mouseY = e.clientY;
-			let _depth1 = `${50 - (_mouseX - _w) * 0.006}% ${80 - (_mouseY - _h) * 0.01}%`;
-			let _depth2 = `${50 - (_mouseX - _w) * 0.001}% ${15 - (_mouseY - _h) * 0.0001}%`;
-			let _depth3 = `${50 - (_mouseX - _w) * 0.001}% ${60 - (_mouseY - _h) * 0.001}%`;
-			let x = `${_depth3}, ${_depth2}, ${_depth1}`;
-			console.log(x);
-			elem.style.backgroundPosition = x;
+	<body oncontextmenu="return false;"></body>
+	<!-- =========================================================== -->
+	<!-- Parallax -->
+	<!-- =========================================================== -->
+	<style>
+		body {
+			margin: 0;
+			background-color: #1d1e22;
 		}
-	})();
-</script>
 
-<!-- =========================================================== -->
-<!-- Particles -->
-<!-- =========================================================== -->
-
-<script src="https://spectralalgorithm.github.io/spectral_gaming/files/particles.min.js"></script>
-<style>
-	body {
-	margin: 0;
-	font: normal 75% Arial, Helvetica, sans-serif;
-	}
-	canvas {
-	display: block;
-	vertical-align: bottom;
-	}
-	#particles-js {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-
-	}
-</style>
-<script>
-	particlesJS("particles-js", {
-		particles: {
-			number: { value: 10, density: { enable: true, value_area: 220 } },
-			color: { value: "#ffffff" },
-			shape: {
-				type: "circle",
-				stroke: { width: 0, color: "#000000" },
-				polygon: { nb_sides: 7 },
-				image: { src: "img/github.svg", width: 100, height: 100 }
-			},
-			opacity: {
-				value: 0.5,
-				random: false,
-				anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
-			},
-			size: {
-				value: 2,
-				random: true,
-				anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
-			},
-			line_linked: {
-				enable: true,
-				distance: 150,
-				color: "#ffffff",
-				opacity: 0.4,
-				width: 1
-			},
-			move: {
-				enable: true,
-				speed: 2,
-				direction: "none",
-				random: true,
-				straight: false,
-				out_mode: "out",
-				bounce: false,
-				attract: { enable: false, rotateX: 600, rotateY: 1200 }
-			}
-		},
-		interactivity: {
-			detect_on: "page",
-			events: {
-				onhover: { enable: true, mode: "grab" },
-				onclick: { enable: true, mode: "push" },
-				resize: true
-			},
-			modes: {
-				grab: { distance: 200, line_linked: { opacity: 1 } },
-				bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
-				repulse: { distance: 200, duration: 0.4 },
-				push: { particles_nb: 4 },
-				remove: { particles_nb: 2 }
-			}
-		},
-		retina_detect: true
-	});
-	var count_particles, stats, update;
-	stats = new Stats();
-	stats.setMode(0);
-	stats.domElement.style.position = "absolute";
-	stats.domElement.style.left = "0px";
-	stats.domElement.style.top = "0px";
-	document.body.appendChild(stats.domElement);
-	count_particles = document.querySelector(".js-count-particles");
-	update = function () {
-		stats.begin();
-		stats.end();
-		if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-			count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+		#parallax {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			background-image: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-3.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-2.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-1.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-position: 50% 1000%;
 		}
+	</style>
+	<script>
+		(function() {
+			// Add event listener
+			document.addEventListener("mousemove", parallax);
+			const elem = document.querySelector("#parallax");
+			// Magic happens here
+			function parallax(e) {
+				let _w = window.innerWidth / 2;
+				let _h = window.innerHeight / 2;
+				let _mouseX = e.clientX;
+				let _mouseY = e.clientY;
+				let _depth1 = `${50 - (_mouseX - _w) * 0.01}% ${80 - (_mouseY - _h) * 0.01}%`;
+				let _depth2 = `${50 - (_mouseX - _w) * 0.002}% ${05 - (_mouseY - _h) * 0.001}%`;
+				let _depth3 = `${50 - (_mouseX - _w) * 0.006}% ${50 - (_mouseY - _h) * 0.005}%`;
+				let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+				console.log(x);
+				elem.style.backgroundPosition = x;
+			}
+		})();
+	</script>
+	<!-- =========================================================== -->
+	<!-- Particles -->
+	<!-- =========================================================== -->
+	<script src="https://spectralalgorithm.github.io/spectral_gaming/files/particles.min.js"></script>
+	<style>
+		body {
+			margin: 0;
+			font: normal 75% Arial, Helvetica, sans-serif;
+		}
+
+		canvas {
+			display: block;
+			vertical-align: bottom;
+		}
+
+		#particles-js {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<script>
+		particlesJS("particles-js", {
+			particles: {
+				number: {
+					value: 10,
+					density: {
+						enable: true,
+						value_area: 220
+					}
+				},
+				color: {
+					value: "#ffffff"
+				},
+				shape: {
+					type: "circle",
+					stroke: {
+						width: 0,
+						color: "#000000"
+					},
+					polygon: {
+						nb_sides: 7
+					},
+					image: {
+						src: "img/github.svg",
+						width: 100,
+						height: 100
+					}
+				},
+				opacity: {
+					value: 0.5,
+					random: false,
+					anim: {
+						enable: false,
+						speed: 1,
+						opacity_min: 0.1,
+						sync: false
+					}
+				},
+				size: {
+					value: 2,
+					random: true,
+					anim: {
+						enable: false,
+						speed: 40,
+						size_min: 0.1,
+						sync: false
+					}
+				},
+				line_linked: {
+					enable: true,
+					distance: 150,
+					color: "#ffffff",
+					opacity: 0.4,
+					width: 1
+				},
+				move: {
+					enable: true,
+					speed: 2,
+					direction: "none",
+					random: true,
+					straight: false,
+					out_mode: "out",
+					bounce: false,
+					attract: {
+						enable: false,
+						rotateX: 600,
+						rotateY: 1200
+					}
+				}
+			},
+			interactivity: {
+				detect_on: "page",
+				events: {
+					onhover: {
+						enable: true,
+						mode: "grab"
+					},
+					onclick: {
+						enable: true,
+						mode: "push"
+					},
+					resize: true
+				},
+				modes: {
+					grab: {
+						distance: 200,
+						line_linked: {
+							opacity: 1
+						}
+					},
+					bubble: {
+						distance: 400,
+						size: 40,
+						duration: 2,
+						opacity: 8,
+						speed: 3
+					},
+					repulse: {
+						distance: 200,
+						duration: 0.4
+					},
+					push: {
+						particles_nb: 4
+					},
+					remove: {
+						particles_nb: 2
+					}
+				}
+			},
+			retina_detect: true
+		});
+		var count_particles, stats, update;
+		stats = new Stats();
+		stats.setMode(0);
+		stats.domElement.style.position = "absolute";
+		stats.domElement.style.left = "0px";
+		stats.domElement.style.top = "0px";
+		document.body.appendChild(stats.domElement);
+		count_particles = document.querySelector(".js-count-particles");
+		update = function() {
+			stats.begin();
+			stats.end();
+			if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+				count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+			}
+			requestAnimationFrame(update);
+		};
 		requestAnimationFrame(update);
-	};
-	requestAnimationFrame(update);
-</script>
+	</script>
 </html>
