@@ -188,7 +188,7 @@
 		position: relative;
 		width: 100%;
 		height: 100vh;
-		background-image: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-1.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-2.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-3.png);
+		background-image: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-3.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-2.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample-logo-1.png);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-position: 50% 1000%;
@@ -205,9 +205,9 @@
 			let _h = window.innerHeight / 2;
 			let _mouseX = e.clientX;
 			let _mouseY = e.clientY;
-			let _depth1 = `${50 - (_mouseX - _w) * 0.001}% ${10 - (_mouseY - _h) * 0.0}%`;
-			let _depth2 = `${50 - (_mouseX - _w) * 0.004}% ${15 - (_mouseY - _h) * 0.001}%`;
-			let _depth3 = `${50 - (_mouseX - _w) * 0.01}% ${60 - (_mouseY - _h) * 0.002}%`;
+			let _depth1 = `${50 - (_mouseX - _w) * 0.006}% ${80 - (_mouseY - _h) * 0.01}%`;
+			let _depth2 = `${50 - (_mouseX - _w) * 0.001}% ${15 - (_mouseY - _h) * 0.0001}%`;
+			let _depth3 = `${50 - (_mouseX - _w) * 0.001}% ${60 - (_mouseY - _h) * 0.001}%`;
 			let x = `${_depth3}, ${_depth2}, ${_depth1}`;
 			console.log(x);
 			elem.style.backgroundPosition = x;
@@ -239,7 +239,7 @@
 <script>
 	particlesJS("particles-js", {
 		particles: {
-			number: { value: 10, density: { enable: true, value_area: 120 } },
+			number: { value: 10, density: { enable: true, value_area: 220 } },
 			color: { value: "#ffffff" },
 			shape: {
 				type: "circle",
@@ -310,5 +310,4 @@
 	};
 	requestAnimationFrame(update);
 </script>
-
 </html>
