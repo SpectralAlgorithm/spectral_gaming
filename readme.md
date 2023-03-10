@@ -1,3 +1,3 @@
 # Spectral Gaming
 
-lol, read me
+lol, read me!
