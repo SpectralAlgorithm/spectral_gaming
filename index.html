@@ -198,15 +198,15 @@
 						document.write("<center><font color=F4BB44 size = 3>'" + r_text[i_text] + "'</font></center>");
 					</script>
 					<font color=151515 style="Segoe UI" size="1">
-						<p>I mosTly jusT shiTposT sTuff here because I can, I mean jusT imagine having acTual conTenT being posTed here, cringe</p>
+						<p>WE MOSTLY JUST SHITPOST STUFF ON HERE, I MEAN CAN YOU EVEN IMAGINE HAVING ACTUAL CONTENT? THAT WOULD BE PRETTY CRINGE</p>
 					</font>
 				</div>
 				<br>
-				<a href="https://twitch.tv/SpectralGamingOfficial/" class="BtnLayout">TWITCH</a>
-				<a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld/" class="BtnLayout">GUILDED</a>
-				<button id="myBtn" onclick="myFunction()">:|</button>
 				<a href="https://facebook.com/SpectralGamingOfficial/" class="BtnLayout">FACEBOOK</a>
+				<a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld/" class="BtnLayout">GUILDED</a>
+				<button id="myBtn" onclick="myFunction()">aaand here exists a tempting RED BUTTON that you def should NOT click...</button>
 				<a href="https://youtube.com/c/SpectralGamingOfficial/" class="BtnLayout">YOUTUBE</a>
+				<a href="https://twitch.tv/SpectralGamingOfficial/" class="BtnLayout">TWITCH</a>
 				<br>
 				<div id="myDIV">
 					<br>
@@ -230,15 +230,18 @@
 			x.style.display = "none";
 
 			function myFunction() {
-				alert("haha button lmao");
 				if (video.paused) {
 					video.play();
 					audio.play();
+					audio.volume=0.25
 					btn.innerHTML = ":(";
 				} else {
 					video.pause();
 					audio.pause();
+					audio.play();
+					audio.volume=0.25
 					btn.innerHTML = ":)";
+					alert("-- WARNING WEBSITE INJECTION METHOD --\n\nError 177013: A virus has been successfully installed!\n\nlol jk. join our community, it's free!");
 				}
 				var x = document.getElementById("myDIV");
 				if (x.style.display === "none") {
