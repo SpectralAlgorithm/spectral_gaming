@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Spectral Gaming</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no">
+		<link rel="icon" href="https://spectralalgorithm.github.io/spectral_gaming/files/favicon.png">
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				font-family: Arial;
+				font-size: 17px;
+				background-color: black;
+				background-image: url("https://spectralalgorithm.github.io/spectral_gaming/files/sample.png");
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				overflow: hidden;
+				animation: fadeInAnimation ease 1s;
+			}
+			@keyframes fadeInAnimation {
+				0% { opacity: 0; }
+				100% { opacity: 1; }
+			}
+			@keyframes zoomInAnimation {
+				from { transform: scale(0); opacity: 0; }
+				to { transform: scale(1); opacity: 1; }
+			}
+			@keyframes bounceInAnimation {
+				0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+				40% { transform: translateY(-30px); }
+				60% { transform: translateY(-15px); }
+			}
+			@font-face {
+				font-family: Exocet;
+				src: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample.ttf);
+			}
+			div {
+				font-family: Exocet;
+			}
+			#myvideo {
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				-webkit-transform: translateX(-50%) translateY(-50%);
+				transform: translateX(-50%) translateY(-50%);
+				min-width: 100%;
+				min-height: 100%;
+				width: auto;
+				height: auto;
+				z-index: -1000;
+				overflow: hidden;
+				animation: fadeInAnimation ease 5s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			.vignette {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				box-shadow: 0 0 200px rgba(0, 0, 0, 0.9) inset;
+			}
+			.content1 {
+				position: fixed;
+				top: 0;
+				color: #f1f1f1;
+				animation: fadeInAnimation ease 1s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			.content2 {
+				bottom: 0;
+				background: rgba(0, 0, 0, 0.50);
+				backdrop-filter: blur(6px);
+				color: #f1f1f1;
+				width: 100%;
+				padding: 0px;
+				transform: translate(-50%, 5%);
+				position: absolute;
+				left: 50%;
+				animation: fadeInAnimation ease 1s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				transition: 0.7s;
+			}
+			.content2:hover {
+				background: rgba(0, 0, 0, 0.65);
+				width: 50%;
+				border-radius: 32px;
+				backdrop-filter: blur(12px);
+				animation: fadeInAnimation ease 1s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				transition: 0.7s;
+			}
+			.btnlayout {
+				background-color: rgba(50, 50, 50, 0.5);
+				border: none;
+				color: white;
+				padding: 12px 24px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 14px;
+				margin: 4px 2px;
+				cursor: hand;
+				border-radius: 9px;
+				transition: 0.7s;
+				backdrop-filter: blur(3px);
+			}
+			.btnlayout:hover {
+				background: #ddd;
+				color: black;
+				transition: 0.7s;
+			}
+			#mybtn {
+				background-color: rgba(255, 30, 30, 1.0);
+				border: none;
+				color: white;
+				padding: 12px 24px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 14px;
+				margin: 4px 2px;
+				cursor: hand;
+				border-radius: 9px;
+				transition: 0.7s;
+				backdrop-filter: blur(3px);
+			}
+			#mybtn:hover {
+				background: rgba(255, 255, 255, 1.0);
+				color: black;
+				transition: 0.7s;
+				backdrop-filter: blur(3px);
+			}
+			.overlay {
+				height: 100%;
+				width: 0%;
+				position: fixed;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				background-color: rgb(0,0,0);
+				background-color: rgba(0,0,0, 0.97);
+				backdrop-filter: blur(8px);
+				overflow-x: hidden;
+				overflow: hidden;
+				transition: 0.5s;
+			}
+			.overlay-content {
+				position: relative;
+				top: 10%;
+				width: 100%;
+				padding: 50px 150px;
+				text-align: center;
+				margin-top: -5px;
+			}
+			.overlay a {
+				padding: 8px;
+				text-decoration: none;
+				color: #818181;
+				display: block;
+				transition: 0.3s;
+			}
+			.overlay a:hover, .overlay a:focus {
+				color: #f1f1f1;
+			}
+			.overlay .closebtn {
+				position: absolute;
+				top: 20px;
+				right: 45px;
+				font-size: 60px;
+			}
+			.tablink {
+				position: absolute;
+				bottom: 0;
+				float: right;
+				background: rgba(0, 0, 0, 0.5);
+				color: #f1f1f1;
+				width: 25%;
+				padding: 20px;
+				border-radius: 9px;
+				backdrop-filter: blur(3px);
+				transition: 0.3s;
+				overflow: hidden;
+			}
+			.tablink:hover {
+				background-color: rgba(0, 0, 0, 0.6);
+				border-radius: 9px;
+				font-size: 90px;
+			}
+			.tabcontent {
+				color: white;
+				display: none;
+				width: 100%;
+				padding: 20px 160px;
+				text-align: center;
+				animation: fadeInAnimation ease 1s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				transition: 0.3s;
+			}
+			.icon-bar {
+				position: fixed;
+				top: 30%;
+				-webkit-transform: translateY(-50%);
+				-ms-transform: translateY(-50%);
+				transform: translateY(-50%);
+				transition: 0.8s;
+				background-color: rgba(0, 0, 0, 0.6);
+				border-radius: 9px;
+			}
+			.icon-bar a {
+				display: block;
+				text-align: center;
+				padding: 16px;
+				transition: all 0.3s ease;
+				color: white;
+				font-size: 20px;
+				transition: 0.8s;
+			}
+			.icon-bar a:hover {
+				background-color: rgba(255, 255, 255, 0.5);
+				border-radius: 9px;
+			}
+		</style>
+	</head>
+	<body>
+		<video autoplay muted loop id="myvideo">
+			<source src="https://spectralalgorithm.github.io/spectral_gaming/files/sample_triangular.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+		</video>
+		<audio autoplay loop id="myAudio">
+			<source src="https://spectralalgorithm.github.io/spectral_gaming/files/sample.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+		</audio>
+		<div class="vignette"></div>
+		<center>
+			<div id="parallax">
+				<div id="particles-js"></div>
+			</div>
+		</center>
+
+		<div class="navbar">
+			<style>
+				.navbar {
+					backdrop-filter: blur(5px);
+					overflow: hidden;
+					background-color: rgba(0, 0, 0, 0.0);
+					position: fixed;
+					top: 0;
+					width: 100%;
+					padding: 0px 0px;
+				}
+				.navtablink {
+					color: white;
+					background-color: rgba(0, 0, 0, 0.65);
+					float: left;
+					border: none;
+					outline: none;
+					cursor: pointer;
+					padding: 14px 0px;
+					font-size: 14px;
+					width: 25%;
+					animation: fadeInAnimation ease 1s;
+					animation-iteration-count: 1;
+					animation-fill-mode: forwards;
+					backdrop-filter: blur(3px);
+					font-family: Exocet;
+				}
+				.navtablink:hover {
+					color: black;
+					background-color: rgba(255, 255, 255, 0.5);
+					animation: fadeInAnimation ease 1s;
+					animation-iteration-count: 1;
+					animation-fill-mode: forwards;
+					transition: 0.7s;
+				}
+				.navtabcontent {
+					color: white;
+					display: none;
+					box-sizing: border-box;
+					transition: 0.3s;
+					padding: 50px;
+					width: 100vw; /* Full viewport width */
+					height: 100vh; /* Full viewport height */
+					background-color: rgba(0, 0, 0, 0.0);
+					background-image: url("");
+					background-attachment: fixed;
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					animation-iteration-count: 1;
+					animation-fill-mode: forwards;
+					animation: fadeInAnimation ease 0.5s;
+					z-index: -1; /* Ensure it is above the image */
+				}
+				.navcontent {
+					background: rgba(0, 0, 0, 0.50);
+					padding: 10px 30px 10px 30px;
+					box-sizing: border-box;
+					border-radius: 9px;
+					transform: translate(-50%, -50%); /* Adjust the position back to center */
+					position: absolute; /* Use absolute positioning */
+					left: 50%; /* Center the text horizontally */
+					top: 35%; /* Center the text vertically */
+					backdrop-filter: blur(10px);
+					font-size: 12px;
+				}
+			</style>
+			<button class="navtablink" onclick="openPage('tab1', this, 'rgba(255, 100, 200, 0.5)')" id="defaultOpen">ALGORITHM</button>
+			<button class="navtablink" onclick="openPage('tab2', this, 'rgba(0, 255, 200, 0.5)')">DOWNLOADS</button>
+			<button class="navtablink" onclick="openPage('tab3', this, 'rgba(170, 250, 0, 0.5)')">TOOLS</button>
+			<button class="navtablink" onclick="openPage('tab4', this, 'rgba(128, 0, 255, 0.5)')">DONATE</button>
+			<div id="tab1" class="body"></div>
+			<div id="tab2" class="navtabcontent">
+				<script>document.getElementById("tab2").style.backgroundImage = "url('https://i.pinimg.com/originals/19/6a/d9/196ad9d3122098b297d7b99ce9ff209f.gif')";</script> 
+				<script>document.getElementById("tab2").style.backgroundImage = "url('')";</script>
+				<div class="navcontent">
+					<center>
+						<h3>DOWNLOADS</h3>
+						<div class="video-container">
+							<style>
+								.video-container {
+									position: relative;
+									width: 480px;
+									height: 269px;
+									overflow: hidden;
+									aspect-ratio: 16/9;
+									border-radius: 6px;
+								}
+								.video-container iframe {
+									position: absolute;
+									top: -65px; /* Adjust this value to hide the title */
+									left: 0;
+									width: 100%;
+									height: 400px; /* Adjust height as necessary */
+								}
+							</style>
+							<iframe width="4280" height="720" src="https://www.youtube.com/embed/v3SW4uOaVgs?autoplay=1&controls=0&loop=1" title=" " frameborder="0" loop="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						</div>
+						<p>Sample TexT unfinished conTenT</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					</center>
+				</div>
+			</div>
+			<div id="tab3" class="navtabcontent">
+				<script>document.getElementById("tab3").style.backgroundImage = "url('https://wallpaperaccess.com/full/8351224.gif')";</script>
+				<script>document.getElementById("tab3").style.backgroundImage = "url('')";</script>
+				<div class="navcontent">
+					<center>
+						<h3>NO CONTENT AVAILABLE</h3>
+					</center>
+				</div>
+			</div>
+			<div id="tab4" class="navtabcontent">
+				<script>document.getElementById("tab4").style.backgroundImage = "url('https://wallpaperaccess.com/full/2825711.gif')";</script>
+				<script>document.getElementById("tab4").style.backgroundImage = "url('file:///L:/[_]Website/website/dhg9ghh-0e3f839c-c5a8-4378-83dd-6a69d65761d0.gif')";</script>
+				<div class="navcontent">
+					<center>
+						<h3><a href="https://ko-fi.com/algorithm">&#10084 SPARE SOME COFFEE &#10084</a></h3>
+					</center>
+				</div>
+			</div>
+			<script>
+				function openPage(pageName,elmnt,color) {
+					var i, tabcontent, tablinks;
+					tabcontent = document.getElementsByClassName("navtabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+					tablinks = document.getElementsByClassName("navtablink");
+					for (i = 0; i < tablinks.length; i++) {
+						tablinks[i].style.backgroundColor = "";
+					}
+					document.getElementById(pageName).style.display = "block";
+					elmnt.style.backgroundColor = color;
+				}
+				document.getElementById("defaultOpen").click();
+			</script>
+		</div>
+		<div class="content2">
+			<center>
+				<div style="border-radius: 24px;backdrop-filter: blur(9px);color: #777;background-color:rgba(0, 0, 0, 0.50);text-align:center;padding:5px 80px;text-align: center;">
+					<font color=00FFFF style="Segoe UI" size="4"><h2 style="text-align:center;">❖ QUOTE OF THE DAY ❖</h3></font>
+					<script>
+						var r_text = new Array();
+						r_text[0] = "A MAN WILL BELIEVE ANYTHING THAT DOES NOT COST HIM ANYTHING";
+						r_text[1] = "ACADEMIC RIVALRIES ARE SO INTENSE BECAUSE THE STAKES ARE SO SMALL";
+						r_text[2] = "ALMOST EVERYTHING IN LIFE IS EASIER TO GET INTO THAN OUT OF";
+						r_text[3] = "ANY SUFFICIENTLY ADVANCED TECHNOLOGY IS INDISTINGUISHABLE FROM MAGIC";
+						r_text[4] = "COMMON SENSE IS INSTINCT; ENOUGH OF IT IS GENIUS";
+						r_text[5] = "CONFIDENCE IS THE FEELING YOU HAD BEFORE YOU KNEW BETTER";
+						r_text[6] = "EVEN A MAN WHO HAS NOTHING CAN STILL OFFER HIS LIFE";
+						r_text[7] = "EVEN THE MOST FAITHFUL BELIEVER CAN SERVE A FALSE GOD";
+						r_text[8] = "EVERYONE HAS A SCHEME FOR GETTING RICH THAT WILL NOT WORK";
+						r_text[9] = "EXTINCTION IS THE ULTIMATE FATE OF ALL SPECIES";
+						r_text[10] = "EXTREME BOREDOM SERVES TO CURE BOREDOM";
+						r_text[11] = "EXTREME SORROW LAUGHS; EXTREME JOY WEEPS";
+						r_text[12] = "FEAR DENIES FAITH.";
+						r_text[13] = "FEAR IS A FAR MORE DOMINANT FORCE IN HUMAN BEHAVIOR THAN EUPHORIA.";
+						r_text[14] = "FOOLS MULTIPLY WHEN WISE MEN ARE SILENT";
+						r_text[15] = "FREEDOM IS FOR EVERYONE; OR NO ONE";
+						r_text[16] = "FRIENDS MAY COME AND FRIENDS MAY GO, BUT ENEMIES ACCUMULATE";
+						r_text[17] = "FRUSTRATION IS NOT HAVING ANYONE ELSE TO BLAME, BUT ONE'S SELF";
+						r_text[18] = "GOD GIVES THE NUTS, BUT HE DOES NOT CRACK THEM";
+						r_text[19] = "HAPPINESS IS A DELUSION OF THE WEAK";
+						r_text[20] = "HE WHO KEEPS SILENT CONSENTS";
+						r_text[21] = "HERESY GROWS FROM IDLENESS";
+						r_text[22] = "IF YOU CANNOT CONVINCE THEM, CONFUSE THEM";
+						r_text[23] = "IF YOU DISINFECT THE POND, YOU KILL THE LILIES";
+						r_text[24] = "IF YOUR REASONING POWERS ARE GOOD, THEN YOU ARE A FAIRLY GOOD PLANNER";
+						r_text[25] = "IGNORANTIA JURIS NON EXCUSAT - IGNORANCE OF THE LAW EXCUSES NO ONE";
+						r_text[26] = "IN A MAD WORLD, ONLY GREATER MADNESS SUCCEEDS";
+						r_text[27] = "INNOCENCE PROVES NOTHING - THERE IS NO SUCH THING AS INNOCENCE, ONLY VARYING DEGREES OF GUILT";
+						r_text[28] = "IT IS OFTEN EASIER TO FIND THE TRUTH THAN IT IS TO ACCEPT IT";
+						r_text[29] = "KNOWLEDGE CAN CURE IGNORANCE, BUT INTELLIGENCE CANNOT CURE STUPIDITY";
+						r_text[30] = "LIFE IS A LEARNING EXPERIENCE; THE DIPLOMA IS YOUR DEATH CERTIFICATE";
+						r_text[31] = "MAY YOU LIVE IN INTERESTING TIMES";
+						r_text[32] = "NATURE ALWAYS SIDES WITH THE HIDDEN FLAW";
+						r_text[33] = "NEVER ARGUE WITH A FOOL... PEOPLE MAY NOT BE ABLE TO TELL YOU APART";
+						r_text[34] = "NEVER CLAIM AS A RIGHT THAT WHICH YOU CAN ASK AS A FAVOR";
+						r_text[35] = "NEVER COMPLAIN; NEVER EXPLAIN";
+						r_text[36] = "NEVER UNDERESTIMATE THE POWER OF STUPIDITY";
+						r_text[37] = "NO MAN'S KNOWLEDGE GOES BEYOND HIS EXPERIENCE";
+						r_text[38] = "PESSIMISTS ARE THE WORLD'S HAPPIEST PEOPLE...";
+						r_text[39] = "RUMORS ARE THE SAUCE OF A DRY LIFE";
+						r_text[40] = "SMALL THINGS ENTERTAIN SMALL MINDS";
+						r_text[41] = "STRONG WORDS CONNOTE WEAK ARGUMENTS";
+						r_text[42] = "TEMPT NOT A DESPERATE MAN";
+						r_text[43] = "THE BEST WAY TO ACHIEVE IMMORTALITY IS BY NOT DYING";
+						r_text[44] = "THE BEST WAY TO ATTRACT MONEY IS TO GIVE THE APPEARANCE OF HAVING IT";
+						r_text[45] = "THE BIGGEST IDIOT CAN ASK QUESTIONS THE SMARTEST MAN CANNOT ANSWER";
+						r_text[46] = "THE DEEPEST AND MOST IMPORTANT VIRTUES ARE OFTEN THE DULLEST ONES";
+						r_text[47] = "THE FIRST GREAT GIFT THAT WE CAN BESTOW UPON OTHERS IS A GOOD EXAMPLE";
+						r_text[48] = "THE SADDEST OF WORDS: I ALWAYS WANTED TO, BUT NEVER DID";
+						r_text[49] = "THE SECRET TO CREATIVITY IS KNOWING HOW TO HIDE YOUR SOURCES";
+						r_text[50] = "THOSE WHO DO NOT LEARN FROM HISTORY OFTEN END UP MAKING IT";
+						r_text[51] = "WE MUST TAKE SIDES... SILENCE ENCOURAGES THE TORMENTOR, NEVER THE TORMENTED";
+						r_text[52] = "WER ZULETZT LACHT, LACHT AM BESTEN";
+						r_text[53] = "YOU CAN DISCOVER WHAT YOUR ENEMY FEARS MOST BY OBSERVING THE MEANS HE USES TO FRIGHTEN YOU";
+						r_text[54] = "YOUR LIFE WOULD BE VERY EMPTY IF YOU HAD NOTHING TO REGRET";
+						r_text[55] = "TRUST, BUT VERIFY";
+						r_text[56] = "UNSOLICITED ADVICE IS ONE OF MY SPECIALTIES";
+						r_text[57] = "IF YOU GAZE LONG INTO THE ABYSS, THE ABYSS ALSO GAZES INTO YOU";
+						r_text[58] = "HE WHO FIGHTS WITH MONSTERS SHOULD LOOK TO IT THAT HE HIMSELF DOES NOT BECOME A MONSTER";
+						r_text[59] = "IT IS GOOD TO LEARN FROM YOUR MISTAKES, BUT IT IS BETTER TO LEARN FROM THE MISTAKES OF OTHERS";
+						r_text[60] = "IF BUYING ISN'T OWNING, PIRACY ISN'T STEALING";
+						var i_text = Math.floor(r_text.length * Math.random());
+						document.write("<center><font color=F4BB44 size = 3>'" + r_text[i_text] + "'</font></center>");
+					</script><font color=030303 size="1"><p>NEW QUOTE GENERATES EACH TIME U REFRESH THE PAGE. LOL.</p></font>
+				</div>
+				<br>
+				<!-- <a href="https://facebook.com/SpectralGamingOfficial/" class="btnlayout">FACEBOOK</a> -->
+				<a href="https://guilded.gg/SpectralGaming?i=ndaMY2ld/" class="btnlayout">GUILDED</a>
+				<button id="mybtn" onclick="openNav()">&#9776</button>
+				<a href="https://youtube.com/@SpectralGamingOfficial/videos" class="btnlayout">YOUTUBE</a>
+				<!-- <a href="https://twitch.tv/SpectralGamingOfficial/" class="btnlayout">TWITCH</a> -->
+				<br>
+				<font color=FFFFFF size="1">
+					<p>&copy; ALGORITHM 1337-<script>document.write(new Date().getFullYear())</script>, ALL RIGHTS RESERVED.</p><br>
+				</font>
+			</center>
+		</div>
+
+		<div class="content1">
+			<div id="myNav" class="overlay">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				<div class="overlay-content">
+					<div id="divnice">
+						<font color=FFFFFF size="12"><a href="javascript:void(0)" onclick="openCity('TabAbout', this)">ABOUT</a></font>
+						<font color=FFFFFF size="12"><a href="javascript:void(0)" onclick="openCity('TabTeam', this)">OPERATORS</a></font>
+						<font color=FFFFFF size="12"><a href="javascript:void(0)" onclick="openCity('TabContacts', this);myFunction()">COMMUNITY</a></font>
+					</div>
+					<div id="TabAbout" class="tabcontent">
+						<h1><font color=FFFFFF size="4"><p>SPECTRAL GAMING</p></font></h1><font color=FFFFFF size="2"><p>A GAMING COMMUNITY FOR FRIENDS TO SHARE IDEAS, SEEK ADVICE, DISCUSS FUN TOPICS, AND ENGAGE IN INTERESTING CONVERSATIONS.</p></font>
+						<img src="https://spectralalgorithm.github.io/spectral_gaming/files/sample_logo-animated.gif">
+					</div>
+					<div id="TabTeam" class="tabcontent">
+						<h1><font color=FFFFFF size="4"><p>WEBSITE</p></font></h1><font color=33DAFF size="2"><p>ALGORITHM <font color=FFFFFF>• <font color=FFC300>CODING & DESIGN</font></p></font>
+						<!-- START HERE
+						<font color=33DAFF size="2"><p>N/A <font color=FFFFFF>• <font color=FFC300>TECHNICAL SUPPORT</font></p></font>
+						<font color=33DAFF size="2"><p>N/A <font color=FFFFFF>• <font color=FFC300>COMMUNITY MANAGER</font></p></font>
+						<font color=FF444F size="2"><p>LEKEVS <font color=FFFFFF>• <font color=FFC300>SUPPORTER</font></p></font>
+						<font color=FF444F size="2"><p>HUNTER <font color=FFFFFF>• <font color=FFC300>SUPPORTER</font></p></font>
+						<font color=FF444F size="2"><p>KABASHI <font color=FFFFFF>• <font color=FFC300>SUPPORTER</font></p></font>
+						<font color=FF444F size="2"><p>RJPE1234 <font color=FFFFFF>• <font color=FFC300>SUPPORTER</font></p></font>
+						<font color=FF444F size="2"><p>GENERALPAPS <font color=FFFFFF>• <font color=FFC300>SUPPORTER</font></p></font>
+						END HERE -->
+					</div>
+					<div id="TabContacts" class="tabcontent">
+						<h1><font color=FFFFFF size="4"><p>JOIN US!</p></font></h1><font color=FFFFFF size="1"><p>IT'S TOTALLY JUST LIKE A DISCORD SERVER, BUT BETTER AND FREE:</font><br>
+						<iframe src="https://www.guilded.gg/canvas_index.html?route=%2Fcanvas%2Fembed%2Fteamcard%2F4l38X4aE&size=large" width="55%" height="194" frameborder="0" scrolling="no"></iframe>
+						<font color=FFFFFF size="1"><p>DISCLAIMER: THIS APP IS FREE FROM ADS AND SCAM BOTS TRYING TO HACK YOUR ACCOUNT. IT DOESN'T CONSTANTLY REMIND YOU OF PREMIUM FEATURES AND SHOW EVERYONE YOU'RE A BROKE FREEMIUM USER.</p></font>
+						<a target="_blank" href="https://www.guilded.gg/SpectralGaming/blog/diamond-minus-xguilded-info/Chad-Guilded"><font color=B2BF49 size="1"><u>BUT YOU'RE PROBABLY ASKING HOW IS IT BETTER THAN DISCORD?</p></u></font></a>
+						<div id="myDIV">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function openNav() {
+				document.getElementById("myNav").style.width = "100%";
+			}
+			function closeNav() {
+				document.getElementById("myNav").style.width = "0%";
+			}
+		</script>
+
+		<script>
+			<!-- alert("H-how did u get here?\n\nAnyways, did you know that in terms of Pokémon, Vaporeon is the most compatible Pokémon?"); -->
+
+			var video = document.getElementById("myvideo");
+			var audio = document.getElementById("myAudio");
+			var btn = document.getElementById("mybtn");
+			var x = document.getElementById("myDIV");
+			x.style.display = "none";
+
+			window.onload = function() {
+				audio.play();
+				audio.volume=0.05
+			}
+
+			function myFunction() {
+				if (video.paused) {
+					video.play();
+					<!-- audio.play(); -->
+					btn.innerHTML = ":(";
+				} else {
+					audio.pause();
+					<!-- audio.play(); -->
+					btn.innerHTML = ":)";
+				}
+				var x = document.getElementById("myDIV");
+				if (x.style.display === "none") {
+					x.style.display = "block";
+				} else {
+					x.style.display = "none";
+				}
+			}
+		</script>
+		<script src="http://mediaplayer.yahoo.com/js"></script>
+	</body>
+
+	<body oncontextmenu="return false;"></body>
+
+	<!-- =========================================================== -->
+	<!-- Tab Linking -->
+	<!-- =========================================================== -->
+
+	<script>
+		function openCity(cityName,elmnt,color) {
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].style.backgroundColor = "";
+			}
+				document.getElementById(cityName).style.display = "block";
+				elmnt.style.backgroundColor = color;
+		}
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
+
+	<!-- =========================================================== -->
+	<!-- Social Links -->
+	<!-- =========================================================== -->
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<div class="icon-bar">
+			<a href="https://www.facebook.com/SpectralGamingOfficial/" class="facebook"><i class="fa fa-facebook"></i></a>
+			<a href="https://direct-link.net/882256/spectral-gaming" class="twitter"><i class="fa fa-twitter"></i></a>
+			<a href="https://direct-link.net/882256/spectral-gaming" class="google"><i class="fa fa-google"></i></a>
+			<!-- <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a> -->
+			<!-- <a href="https://youtube.com/c/SpectralGamingOfficial/" class="youtube"><i class="fa fa-youtube"></i></a> -->
+		</div>
+
+	<!-- =========================================================== -->
+	<!-- Parallax -->
+	<!-- =========================================================== -->
+
+	<style>
+		#parallax {
+			position: relative;
+			width: 100vw;
+			height: 100vh;
+			background-image: url(https://spectralalgorithm.github.io/spectral_gaming/files/sample_logo-3.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample_logo-2.png), url(https://spectralalgorithm.github.io/spectral_gaming/files/sample_logo-1.png);
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			animation: fadeInAnimation ease 5s;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+			backdrop-filter: blur(1px);
+		}
+	</style>
+	<script>
+		(function() {
+			// Add event listener
+			document.addEventListener("mousemove", parallax);
+			const elem = document.querySelector("#parallax");
+			// Magic happens here
+			function parallax(e) {
+				let _w = window.innerWidth / 2;
+				let _h = window.innerHeight / 2;
+				let _mouseX = e.clientX;
+				let _mouseY = e.clientY;
+				let _depth1 = `${50 - (_mouseX - _w) * 0.001}% ${50 - (_mouseY - _h) * 0.004}%`;
+				let _depth2 = `${50 - (_mouseX - _w) * 0.003}% ${50 - (_mouseY - _h) * 0.002}%`;
+				let _depth3 = `${50 - (_mouseX - _w) * 0.006}% ${50 - (_mouseY - _h) * 0.002}%`;
+				let x = `${_depth3}, ${_depth2}, ${_depth1}`;
+				console.log(x);
+				elem.style.backgroundPosition = x;
+			}
+		})();
+	</script>
+
+	<!-- =========================================================== -->
+	<!-- Particles -->
+	<!-- =========================================================== -->
+
+	<script src="https://spectralalgorithm.github.io/spectral_gaming/files/particles.min.js"></script>
+	<style>
+		canvas {
+			display: block;
+			vertical-align: bottom;
+		}
+
+		#particles-js {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<script>
+		particlesJS("particles-js", {
+			particles: {
+				number: {
+					value: 10,
+					density: {
+						enable: true,
+						value_area: 220
+					}
+				},
+				color: {
+					value: "#ffffff"
+				},
+				shape: {
+					type: "circle",
+					stroke: {
+						width: 0,
+						color: "#000000"
+					},
+					polygon: {
+						nb_sides: 7
+					},
+					image: {
+						src: "img/github.svg",
+						width: 100,
+						height: 100
+					}
+				},
+				opacity: {
+					value: 0.5,
+					random: false,
+					anim: {
+						enable: false,
+						speed: 1,
+						opacity_min: 0.1,
+						sync: false
+					}
+				},
+				size: {
+					value: 2,
+					random: true,
+					anim: {
+						enable: false,
+						speed: 40,
+						size_min: 0.1,
+						sync: false
+					}
+				},
+				line_linked: {
+					enable: true,
+					distance: 150,
+					color: "#ffffff",
+					opacity: 0.4,
+					width: 1
+				},
+				move: {
+					enable: true,
+					speed: 2,
+					direction: "none",
+					random: true,
+					straight: false,
+					out_mode: "out",
+					bounce: false,
+					attract: {
+						enable: false,
+						rotateX: 600,
+						rotateY: 1200
+					}
+				}
+			},
+			interactivity: {
+				detect_on: "page",
+				events: {
+					onhover: {
+						enable: true,
+						mode: "grab"
+					},
+					onclick: {
+						enable: true,
+						mode: "push"
+					},
+					resize: true
+				},
+				modes: {
+					grab: {
+						distance: 200,
+						line_linked: {
+							opacity: 1
+						}
+					},
+					bubble: {
+						distance: 400,
+						size: 40,
+						duration: 2,
+						opacity: 8,
+						speed: 3
+					},
+					repulse: {
+						distance: 200,
+						duration: 0.4
+					},
+					push: {
+						particles_nb: 4
+					},
+					remove: {
+						particles_nb: 2
+					}
+				}
+			},
+			retina_detect: true
+		});
+		var count_particles, stats, update;
+		stats = new Stats();
+		stats.setMode(0);
+		stats.domElement.style.position = "absolute";
+		stats.domElement.style.left = "0px";
+		stats.domElement.style.top = "0px";
+		document.body.appendChild(stats.domElement);
+		count_particles = document.querySelector(".js-count-particles");
+		update = function() {
+			stats.begin();
+			stats.end();
+			if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+				count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+			}
+			requestAnimationFrame(update);
+		};
+		requestAnimationFrame(update);
+	</script>
+	<script type="text/javascript">
+		var ouo_token = '0vii0cWX';
+		var domains = ['depositfiles.com', 'rapidshare.com', 'uploading.com', 'uploadable.ch', 'letitbit.net', 'turbobit.net', 'mediafire.com']; 
+	</script>
+	<script src="//cdn.ouo.io/js/full-page-script.js"></script>
+</html>
